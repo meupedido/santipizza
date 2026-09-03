@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Oswald:wght@500;600;700&display=swap');
+
+:root {
+  --red: #92051f;
+  --red-deep: #650314;
+  --red-dark: #4b0210;
+  --yellow: #ffc928;
+  --yellow-light: #ffdc61;
+  --cream: #fffaf0;
+  --muted: #e8b5bf;
+  --line: rgba(255, 201, 40, .18);
+  --shadow: 0 14px 34px rgba(49, 0, 10, .22);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: var(--red); color: var(--cream); font-family: 'DM Sans', sans-serif; }
+button, input, select { font: inherit; }
+button { -webkit-tap-highlight-color: transparent; }
+
+.header { position: sticky; top: 0; z-index: 5; background: linear-gradient(180deg, #a00825 0%, var(--red) 100%); border-bottom: 1px solid var(--line); box-shadow: 0 8px 24px rgba(46, 0, 8, .14); }
+.header-inner, .layout, footer { max-width: 1120px; margin: auto; padding-left: 24px; padding-right: 24px; }
+.header-inner { padding-top: 16px; padding-bottom: 15px; }
+.brand { display: flex; align-items: center; justify-content: center; }
+.brand-logo { width: 170px; height: 170px; display: block; object-fit: contain; border: 0; border-radius: 0; }
+.brand h1 { margin: 0; color: var(--cream); font: 36px/1 'Oswald', sans-serif; letter-spacing: .05em; }
+.brand h1 span { color: var(--yellow); }
+.brand a { display: inline-flex; align-items: center; gap: 5px; margin-top: 8px; color: var(--muted); font: 12px 'Manrope', sans-serif; text-decoration: none; }
+.brand a:hover { color: var(--yellow-light); }
+
+nav { display: flex; gap: 10px; overflow-x: auto; margin-top: 13px; padding: 3px 0 2px; scrollbar-width: none; }
+nav::-webkit-scrollbar { display: none; }
+nav button, .size, .type { border: 1px solid transparent; border-radius: 999px; padding: 10px 17px; background: rgba(75, 2, 16, .55); color: var(--muted); font: 600 12px 'Manrope', sans-serif; letter-spacing: .01em; white-space: nowrap; cursor: pointer; transition: .2s ease; }
+nav button:hover, .size:hover { border-color: var(--yellow); color: var(--yellow-light); transform: translateY(-1px); }
+nav button.active, .size.active, .type.active { background: var(--yellow); color: var(--red-dark); box-shadow: 0 5px 15px rgba(255, 201, 40, .17); }
+
+.layout { display: flex; gap: 34px; padding-top: 30px; }
+.products-area { flex: 1; min-width: 0; }
+.products { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.card, .ticket { background: linear-gradient(145deg, rgba(111, 4, 23, .98), rgba(91, 3, 17, .98)); border: 1px solid rgba(255, 201, 40, .11); border-radius: 14px; box-shadow: var(--shadow); }
+.card { display: flex; min-height: 192px; flex-direction: column; justify-content: space-between; padding: 19px; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.card:hover { transform: translateY(-3px); border-color: rgba(255, 201, 40, .32); box-shadow: 0 17px 36px rgba(48, 0, 10, .3); }
+.card h3 { margin: 0; color: var(--yellow); font: 600 22px/1.1 'Oswald', sans-serif; letter-spacing: .02em; cursor: pointer; }
+.card h3:hover { color: var(--yellow-light); }
+.card p { margin: 8px 0 15px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.sizes { display: flex; flex-wrap: wrap; gap: 7px; }
+.size { padding: 7px 12px; border: 1px solid rgba(255, 201, 40, .72); background: transparent; color: var(--yellow); font-size: 11px; }
+.row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 16px; }
+.price, .ticket-total { color: var(--cream); font: 600 15px 'Manrope', sans-serif; }
+.add, .send { border: 0; background: linear-gradient(135deg, var(--yellow-light), var(--yellow)); color: var(--red-dark); font: 700 12px 'Manrope', sans-serif; cursor: pointer; transition: transform .2s ease, filter .2s ease; }
+.add { border-radius: 999px; padding: 9px 14px; }
+.add:hover, .send:hover { filter: brightness(1.06); transform: translateY(-1px); }
+.step { display: flex; align-items: center; gap: 10px; color: var(--cream); font: 700 13px 'Manrope', sans-serif; }
+.step button { display: grid; width: 29px; height: 29px; place-items: center; border: 0; border-radius: 50%; background: var(--red-dark); color: var(--cream); cursor: pointer; }
+.step button:hover { background: var(--yellow); color: var(--red-dark); }
+.builder { grid-column: 1 / -1; display: block; width: 100%; padding: 20px 22px; border: 1px solid rgba(255,255,255,.14); border-radius: 14px; background: linear-gradient(115deg, #ffda59, var(--yellow)); color: var(--red-dark); text-align: left; cursor: pointer; box-shadow: 0 14px 28px rgba(55, 0, 10, .2); transition: transform .2s ease, box-shadow .2s ease; }
+.builder:hover { transform: translateY(-3px); box-shadow: 0 18px 32px rgba(55, 0, 10, .3); }
+.builder strong { font: 600 23px/1 'Oswald', sans-serif; letter-spacing: .03em; }
+.builder small { display: inline-block; margin-top: 6px; font: 500 12px 'Manrope', sans-serif; }
+
+.desktop-cart { width: 342px; flex: none; }
+.ticket { position: sticky; top: 166px; padding: 21px; }
+.ticket h2 { margin: 0; color: var(--yellow); font: 600 25px/1 'Oswald', sans-serif; letter-spacing: .04em; }
+.ticket-list { min-height: 57px; margin: 17px 0 14px; padding: 10px 0; border-top: 1px dashed rgba(255, 201, 40, .44); border-bottom: 1px dashed rgba(255, 201, 40, .44); }
+.ticket-list > small, .modal small { color: var(--muted); font-size: 12px; }
+.ticket-item { display: flex; justify-content: space-between; gap: 10px; margin: 10px 0; color: var(--cream); font-size: 12px; line-height: 1.35; }
+.ticket-item > span:last-child { flex: 0 0 auto; text-align: right; }
+.ticket-item button { padding: 0 0 0 5px; border: 0; background: none; color: var(--muted); cursor: pointer; }
+.ticket-item button:hover { color: var(--yellow); }
+.mode { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin: 17px 0 8px; }
+.mode button, .payment-select { width: 100%; padding: 10px; border: 1px solid rgba(255, 201, 40, .7); border-radius: 7px; background: transparent; color: var(--yellow); font: 600 12px 'Manrope', sans-serif; cursor: pointer; }
+.mode button.active { background: var(--yellow); color: var(--red-dark); }
+.field-label { display: block; margin: 13px 0 5px; color: var(--muted); font: 600 10px 'Manrope', sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+input, .payment-select { display: block; width: 100%; padding: 11px 12px; margin: 7px 0; border: 1px solid rgba(255, 201, 40, .11); border-radius: 7px; background: var(--red-dark); color: var(--cream); font-size: 13px; }
+input::placeholder { color: #c88693; }
+input:focus, .payment-select:focus { outline: 2px solid var(--yellow); outline-offset: 1px; }
+.payment-select option { background: var(--red-dark); color: var(--cream); }
+.change-note { margin: 5px 0 0; color: var(--muted); font-size: 11px; }
+.send { width: 100%; margin-top: 14px; padding: 12px 14px; border-radius: 7px; }
+.send:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+
+footer { padding-top: 22px; padding-bottom: 42px; color: var(--muted); font: 11px/2 'Manrope', sans-serif; }
+.overlay { position: fixed; inset: 0; z-index: 10; display: flex; align-items: flex-end; justify-content: center; padding: 18px; background: rgba(28, 0, 6, .78); backdrop-filter: blur(4px); }
+.hidden { display: none; }
+.modal { position: relative; width: 100%; max-width: 560px; max-height: 92vh; overflow: auto; padding: 24px; border: 1px solid rgba(255, 201, 40, .24); border-radius: 18px; background: linear-gradient(145deg, #76051b, #580313); box-shadow: 0 20px 70px rgba(0,0,0,.4); }
+.modal-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.modal h2 { margin: 0; color: var(--yellow); font: 600 27px/1 'Oswald', sans-serif; letter-spacing: .03em; }
+.modal p { margin: 20px 0 8px; color: var(--muted); font: 700 10px 'Manrope', sans-serif; letter-spacing: .1em; }
+.close { border: 0; background: none; color: var(--cream); font-size: 27px; line-height: 1; cursor: pointer; }
+.close:hover { color: var(--yellow); }
+.modal-close { position: absolute; top: 18px; right: 17px; z-index: 1; }
+.flavors { max-height: 320px; overflow-y: auto; padding-right: 3px; }
+.flavors button { display: flex; width: 100%; justify-content: space-between; gap: 14px; margin: 6px 0; padding: 12px 13px; border: 1px solid transparent; border-radius: 8px; background: var(--red-dark); color: var(--cream); text-align: left; font-size: 13px; cursor: pointer; transition: .18s ease; }
+.flavors button:hover { border-color: var(--yellow); }
+.flavors button.selected { background: var(--yellow); color: var(--red-dark); font-weight: 700; }
+.modal .row { padding-top: 13px; border-top: 1px dashed rgba(255, 201, 40, .38); }
+
+.cart-button { position: relative; display: flex; align-items: center; justify-content: center; gap: 8px; width: 46px; height: 46px; border: 1px solid var(--line); border-radius: 50%; background: var(--red-deep); color: var(--cream); font-size: 19px; cursor: pointer; }
+.cart-button > span { font: 600 12px 'Manrope', sans-serif; }
+.cart-button > span strong { color: var(--yellow); font-weight: 800; }
+.cart-button b { position: absolute; top: -5px; right: -5px; min-width: 19px; padding: 3px 5px; border-radius: 999px; background: var(--yellow); color: var(--red-dark); font: 700 11px 'Manrope', sans-serif; }
+.mobile-only { display: none; }
+
+@media (max-width: 800px) {
+  .header-inner { padding: 10px 16px 13px; }
+  .brand-logo { width: 118px; height: 118px; }
+  .brand { gap: 11px; }
+  .brand h1 { font-size: 28px; }
+  .brand a { margin-top: 5px; font-size: 10px; }
+  .mobile-only { display: flex; position: static; width: 100%; height: 43px; margin-top: 12px; border-radius: 9px; }
+  nav { margin-top: 10px; padding-right: 56px; }
+  nav button { padding: 9px 13px; }
+  .layout { display: block; padding: 22px 16px 0; }
+  .desktop-cart { display: none; }
+  .products { grid-template-columns: 1fr; gap: 14px; }
+  .builder { grid-column: auto; padding: 17px; }
+  .builder strong { font-size: 21px; }
+  .card { min-height: 0; padding: 17px; }
+  footer { padding: 20px 16px 34px; }
+  .overlay { padding: 0; }
+  .modal { max-height: 94vh; border-radius: 18px 18px 0 0; padding: 21px 17px 25px; }
+}

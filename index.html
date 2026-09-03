@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#8d051d">
+  <title>Santi Pizza</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand"><img class="brand-logo" src="assets/logo.png" alt="Santi Pizza"></div>
+      <button class="cart-button mobile-only" id="open-cart">🛍️ <span>Ver pedido · <strong id="mobile-total">R$ 0,00</strong></span><b id="cart-count">0</b></button>
+      <nav id="categories"></nav>
+    </div>
+  </header>
+  <main class="layout">
+    <section class="products-area"><div id="products" class="products"></div></section>
+    <aside id="desktop-cart" class="desktop-cart"></aside>
+  </main>
+  <footer>☎ 77974003010<br>⌖ Rua Aurélio Alves Silveira, 55 - Cidade Jardim</footer>
+  <div id="overlay" class="overlay hidden"></div>
+  <script src="script.js"></script>
+</body>
+</html>
