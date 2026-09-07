@@ -120,3 +120,66 @@ footer { padding-top: 22px; padding-bottom: 42px; color: var(--muted); font: 11p
   .overlay { padding: 0; }
   .modal { max-height: 94vh; border-radius: 18px 18px 0 0; padding: 21px 17px 25px; }
 }
+
+/* Categorias, combos e montagem com bordas */
+nav { flex-wrap: wrap; overflow: visible; }
+nav button { font-size: 14px; }
+.builder { grid-column: auto; min-height: 192px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; padding: 19px; }
+.builder strong { font-size: 26px; line-height: 1.2; }
+.builder small { font-size: 14px; line-height: 1.5; }
+.builder-cta { display: block; padding: 12px; border-radius: 8px; background: var(--red-dark); color: var(--yellow); font-weight: 800; text-align: center; }
+.section-intro { grid-column: 1 / -1; }
+.section-intro h2 { color: var(--yellow); margin: 8px 0; font-family: 'Oswald', sans-serif; }
+.section-intro p { color: var(--muted); line-height: 1.6; margin: 8px 0; }
+.badge { align-self: flex-start; color: var(--red-dark); background: var(--yellow); border-radius: 5px; font-size: 12px; font-weight: 800; padding: 6px 8px; margin-bottom: 15px; }
+.extra-card { min-height: 150px; }
+.card p { font-size: 14px; }
+.add,.send,.size,.mode button { font-size: 14px; }
+input,select,.payment-select { font-size: 16px; }
+select { width: 100%; padding: 12px; border-radius: 8px; background: var(--red-dark); color: var(--cream); border: 1px solid var(--yellow); }
+.field-label { font-size: 12px; line-height: 1.5; }
+.ticket-item { font-size: 14px; padding: 8px 0; }
+.ticket-item small { display: block; color: var(--muted); margin-top: 5px; font-size: 13px; }
+.ticket-item .step { margin-top: 10px; }
+.ticket { position: static; }
+.modal h2 { padding-right: 26px; line-height: 1.2; }
+.modal p { font-size: 14px; line-height: 1.5; }
+.modal small { font-size: 14px; line-height: 1.5; }
+.flavors button { font-size: 14px; align-items: center; }
+.flavors button > span:last-child { flex-shrink: 0; }
+.flavors button:disabled { opacity: .45; cursor: not-allowed; }
+.option-grid { display: grid; gap: 8px; }
+.border-option { display: flex; gap: 12px; justify-content: space-between; padding: 13px; background: var(--red-dark); color: var(--cream); border: 1px solid transparent; border-radius: 8px; text-align: left; cursor: pointer; font-size: 14px; }
+.border-option strong { white-space: nowrap; }
+.border-option.selected { background: var(--yellow); color: var(--red-dark); }
+.builder-footer { position: sticky; bottom: -24px; background: #580313; padding: 0 0 18px; margin-top: 16px; }
+button:focus-visible { outline: 3px solid var(--cream); outline-offset: 3px; }
+@media(max-width:800px){
+  .header { position: static; }
+  nav { gap: 8px; padding-right: 0; }
+  nav button { flex: 1 1 auto; padding: 10px 12px; }
+  .builder { min-height: 192px; }
+  .cart-button.mobile-only { position: fixed; bottom: 16px; left: 16px; width: calc(100% - 32px); z-index: 8; background: var(--red-dark); border: 2px solid var(--yellow); box-shadow: var(--shadow); height: 52px; margin: 0; }
+  .cart-button > span { font-size: 14px; }
+  footer { padding-bottom: 90px; }
+  .builder-footer { bottom: -25px; }
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* Envio para WhatsApp e chave Pix */
+.whatsapp-send { background: #25D366; color: #073b1b; font-weight: 800; padding: 15px 14px; }
+.whatsapp-send:hover { background: #20bd5a; }
+.pix-box { margin-top: 12px; padding: 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--red-dark); }
+.pix-box > span { display: block; color: var(--muted); font-size: 14px; }
+.pix-key { display: block; margin: 8px 0 12px; font-size: 16px; overflow-wrap: anywhere; user-select: all; }
+.copy-pix { width: 100%; padding: 12px; border: 1px solid var(--yellow); border-radius: 7px; background: transparent; color: var(--yellow); font-size: 14px; font-weight: 700; cursor: pointer; }
+.copy-pix:hover { background: var(--yellow); color: var(--red-dark); }
+.pix-status { display: block; margin-top: 8px; color: var(--cream); line-height: 1.5; }
+.pix-status:empty { display: none; }
+
+/* Acesso ao carrinho no canto superior direito */
+.header-inner { position: relative; }
+.top-cart { position: absolute; top: 20px; right: 24px; width: 48px; height: 48px; border: 1px solid var(--yellow); }
+.top-cart > span { font-size: 24px; }
+.top-cart:hover { background: var(--red-dark); }
+@media (max-width: 800px) { .top-cart { top: 16px; right: 16px; } }
