@@ -214,3 +214,16 @@ nav button { background: rgba(75,2,16,.9); color: #fffaf0; }
 .pizza-builder-modal .size.active { color: #4b0210; }
 .pizza-builder-modal .row { border-top-color: rgba(101,3,20,.3); }
 .pizza-builder-modal button:focus-visible { outline-color: #92051f; }
+
+/* Destaque da etapa de borda no Monte sua Pizza */
+.border-section { margin-top: 18px; padding: 14px; border: 2px solid #92051f; border-radius: 12px; background: rgba(255,250,240,.65); scroll-margin: 80px; }
+.border-heading { margin-bottom: 10px; }
+.border-heading h3 { margin: 7px 0 4px; color: #650314; font-family: 'Oswald', sans-serif; font-size: 21px; }
+.border-badge { display: inline-block; padding: 6px 9px; border-radius: 999px; background: #650314; color: #fffaf0; font-size: 12px; font-weight: 800; letter-spacing: .4px; }
+.border-section .border-option { border-color: rgba(101,3,20,.28); }
+.border-section .border-option:not(.selected):hover { border-color: #92051f; }
+@media(max-width:800px){
+  .border-section { margin-top: 16px; padding: 12px; }
+  .border-heading h3 { font-size: 20px; }
+  .border-option { padding: 14px 12px; }
+}
